@@ -1,0 +1,127 @@
+<div ng-controller="invoiceDetailsCtrl">
+    <div class="container p-3">
+        <!--Invoice Detail-->
+        <div class="row">
+            <div class="col">
+
+                <div class="card text-center">
+                    <div class="card-header">
+                        Invoice Details
+                        <a class="btn btn-sm btn-success float-end mx-2" ng-click="changeMenu('customer-dashboard')">Return</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text text-start">
+
+                            <div class="row mt-1">
+                                <div class="col-md-6">
+                                    <!--Invoice data-->
+                                    <div class="mb-3">
+                                        <span>Invoice NO : </span>
+                                        <span>{{data.id}}</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <span>Status : </span>
+                                        <!-- ng-show -->
+                                        <!-- if data.isPayed is true -->
+                                        <span class="badge bg-success" ng-show="data.payed == true">Payed</span>
+                                        <!-- if data.isPayed is false<<!>> -->
+                                        <span class="badge bg-danger" ng-show="data.payed == false">NotPayed</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <span>Invoice Date : </span>
+                                        <span>{{data.invoiceDateStr}}</span>
+                                    </div>
+                                    <div class="mb-3" ng-show="data.payed">
+                                        <span>Payed Date : </span>
+                                        <span>{{data.payedDateStr}}</span>
+                                    </div>
+
+                                </div>
+                                <!--customer data-->
+                                <div class="col-md-6">
+                                    <span>Customer Name : </span>
+                                    <span>{{data.customer.fullName}}</span>
+                                    <br>
+                                    <span>Email : </span>
+                                    <span>{{data.customer.email}}</span>
+                                    <br>
+                                    <span>Mobile : </span>
+                                    <span>{{data.customer.mobile}}</span>
+                                    <br>
+                                    <span>Tel : </span>
+                                    <span>{{data.customer.tel}}</span>
+                                    <br>
+                                    <span>Address : </span>
+                                    <span>{{data.customer.address}}</span>
+                                    <br>
+                                    <span>PostalCode : </span>
+                                    <span>{{data.customer.postalCode}}</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+        <!-- Show OrderItems -->
+        <div class="row mt-2">
+            <div class="col">
+                <h1><strong>Items List</strong></h1>
+                <!-- Todo: if NotPayed, redirect to payment getaway. -->
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">color</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in data.orderItem">
+                        <th scope="row">{{ $index + 1 }}</th>
+                        <td>
+                            <a class="text-decoration-none" title="show Details" target="_blank"
+                               href="/product/{{item.product.id}}">
+                                <img width="60" src="/api/utils/upload/files/{{item.product.image}}">
+                                <span class="ps-2">{{item.product.title}}</span>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="pt-2">
+                                <div class="color-entity-box rounded-circle"
+                                     style="background:{{item.color.value}}"></div>
+                                <span class="color-title">{{item.color.name}}</span>
+                            </div>
+                        </td>
+                        <td>{{item.size.title}}</td>
+                        <td>$ {{item.price}}</td>
+                        <td>{{item.count}}</td>
+                    </tr>
+                    </tbody>
+                    <tfooter class="table-footer">
+                        <tr>
+                            <td colspan="3">#</td>
+                            <td>Total</td>
+                            <td>
+                                <!--TODO: Discount implementation and vehicle payment,need to change manyPagecode,(part20 1:44).-->
+                                <strong>$ {{totalPrice}}</strong>
+                            </td>
+                            <td>
+                                <strong>{{totalCount}}</strong>
+                            </td>
+                        </tr>
+                    </tfooter>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

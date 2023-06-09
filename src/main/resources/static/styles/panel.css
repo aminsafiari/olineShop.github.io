@@ -1,0 +1,80 @@
+.color-LuckyPoint {
+    color: #40407a;
+}
+
+.color-PalmSprings {
+    color: #218c74;
+}
+
+.color-AlamedaOchre {
+    color: #cc8e35;
+}
+
+.color-EyeOfNewt {
+    color: #b33939;
+}
+
+.color-blue {
+    color: #4687F3;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.panel-header {
+    background-color: #fff;
+    border-bottom: 1px solid #aaa;
+    padding: 10px;
+}
+
+.slide-nav {
+    background-color: #34495e;
+    color: #fff;
+    height: 100%;
+}
+
+.slide-nav ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.slide-nav li {
+    padding: 7px;
+    text-align: left;
+}
+
+.slide-nav li:hover {
+    background-color: #435f76;
+    text-decoration: none;
+}
+
+.slid-nav-active {
+    background-color: #2c3b58;
+}
+
+.slide-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px;
+}
+
+.slide-nav-avatar {
+    margin-bottom: 5px;
+}
+
+.main-container {
+    min-height: 1024px;
+    background-color: #fff;
+}
+
+.color-entity-box {
+    width: 30px;
+    height: 30px;
+    border: rgba(98, 98, 98, 0.67) outset 2px;
+}
+
+.border-form {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
