@@ -147,7 +147,6 @@ public class CustomerVM {
         user.setLastName(getLastName());
         user.setUsername(getUsername());
         user.setPassword(getPassword());
-        //self complete this two features.
         user.setEnable(true);
         user.setRole(UserRole.USER);
         return user;

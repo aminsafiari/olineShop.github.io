@@ -25,14 +25,12 @@ public class SliderService {
         return repository.findAllByEnableIsTrue(Sort.by("itemOrder"));
     }
 
-    // Teacher Code.
     public Slider getById(long id) {
         Optional<Slider> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
 
-    //important code (pagination). for work with big Data.
     public List<Slider> getAll(Integer pageSize, Integer pageNumber) {
         //pagination.
         Pageable page = PageRequest.of(pageNumber, pageSize, Sort.by("ItemOrder"));
@@ -44,13 +42,6 @@ public class SliderService {
         //pagination.
         return repository.count();
     }
-
-    // My Code.
-    /*public Slider getById(long id) {
-        Optional<Slider> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 
@@ -108,7 +99,6 @@ public class SliderService {
                 //up
                 if (item.getItemOrder() <= 1)
                     return item;
-                //sibling => sister or brother.
                 Slider siblingItem = repository.findTopByItemOrder(item.getItemOrder() - 1);
                 //if siblingItem is null, mean not exist then item set (item.getItemOrder() - 1).
                 if (siblingItem == null) {
@@ -121,7 +111,6 @@ public class SliderService {
             }
             case 0 -> {
                 //down
-                //sibling => sister or brother.
                 Slider siblingItem2 = repository.findTopByItemOrder(item.getItemOrder() + 1);
                 //if siblingItem is null, mean not exist then item set (item.getItemOrder() - 1).
                 if (siblingItem2 == null) {
@@ -136,21 +125,9 @@ public class SliderService {
                 }
             }
         }
-        //item save where, because at tow case 0&1, item should save.
+        //item save, because at tow case 0&1, item should save.
         repository.save(item);
         return item;
     }
 
-
-//--------------------------------
-    /*public List<Slider> findAllOrderByItemOrder() {
-        return repository.findAll(Sort.by("itemOrder"));
-    }*/
-
-//-------------------------------------------------------------
-    /*public List<Slider> findAllOrderByItemOrder() {
-        List<Slider> list = new ArrayList<>();
-        repository.findAll(Sort.by("itemOrder")).forEach(list::add);
-        return list;
-    }*/
 }

@@ -9,11 +9,9 @@ app.service("apiHandler", function ($http, $cookies) {
         };
         this.checkAndSetToken(request, setToken);
         $http(request).then((response) => {
-            //when this work that you have Response.
             if (response != null && response.data != null) {
                 const result = response.data;
                 if (result.status == "SUCCESS") {
-                    //call method onSuccess that selfWrite --> (response)=>{}
                     onSuccess(result);
                 } else if (result.hasError) {
                     Swal.fire({
@@ -30,7 +28,6 @@ app.service("apiHandler", function ($http, $cookies) {
                 }
             }
         }, (err) => {
-            //error in internal layer or webServer error.
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
@@ -48,11 +45,9 @@ app.service("apiHandler", function ($http, $cookies) {
         };
         this.checkAndSetToken(request, setToken);
         $http(request).then((response) => {
-            //when this work that you have Response.
             if (response != null && response.data != null) {
                 const result = response.data;
                 if (result.status == "SUCCESS") {
-                    //call method onSuccess that selfWrite --> (response)=>{}
                     onSuccess(result);
                 } else if (result.hasError) {
                     Swal.fire({
@@ -74,7 +69,6 @@ app.service("apiHandler", function ($http, $cookies) {
                 location.href = "/login";
                 return;
             }
-            //error in internal layer or webServer error.
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
@@ -93,7 +87,6 @@ app.service("apiHandler", function ($http, $cookies) {
         }
         this.checkAndSetToken(request, setToken);
         $http(request).then((response) => {
-            //when this work that you have Response.
             if (response != null && response.data != null) {
                 const result = response.data;
                 if (result.status == "SUCCESS") {
@@ -113,7 +106,6 @@ app.service("apiHandler", function ($http, $cookies) {
                 }
             }
         }, (err) => {
-            //error in internal layer or webServer error.
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
@@ -131,7 +123,6 @@ app.service("apiHandler", function ($http, $cookies) {
         }
         this.checkAndSetToken(request, setToken);
         $http(request).then((response) => {
-            //when this work that you have Response.
             if (response != null && response.data != null) {
                 const result = response.data;
                 if (result.status === "SUCCESS") {
@@ -151,7 +142,6 @@ app.service("apiHandler", function ($http, $cookies) {
                 }
             }
         }, (err) => {
-            //error in internal layer or webServer error.
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
@@ -162,7 +152,6 @@ app.service("apiHandler", function ($http, $cookies) {
     }
 
     this.checkAndSetToken = (request, setToken) => {
-        //setToken is boolean.
         if (setToken) {
             let token = $cookies.get("userToken");
             request.headers = {

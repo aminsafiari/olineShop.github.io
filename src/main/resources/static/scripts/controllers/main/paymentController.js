@@ -1,5 +1,6 @@
 app.controller("paymentCtrl", function ($scope, $http, mainApiHandler, $rootScope, $cookies) {
 
+        //for make active nav Title.
         $rootScope.page = "Payment";
 
         //get data from cookies.
@@ -13,7 +14,6 @@ app.controller("paymentCtrl", function ($scope, $http, mainApiHandler, $rootScop
         //get data for fill initial page.
         //fill from cookies.
         $scope.fillDataList = () => {
-            //TODO: fill from cookies.
             if ($cookies.get("basket") === undefined ||
                 $cookies.get("basket") === null) {
                 $scope.dataList = [];
@@ -27,7 +27,6 @@ app.controller("paymentCtrl", function ($scope, $http, mainApiHandler, $rootScop
         }
 
         $scope.gotoPayment = () => {
-            //Todo: validate.
             let orderItems = [];
             for (let i = 0; i < $scope.dataList.length; i++) {
                 let item = $scope.dataList[i];

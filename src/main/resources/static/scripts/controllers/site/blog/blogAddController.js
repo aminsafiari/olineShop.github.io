@@ -5,7 +5,6 @@ app.controller('blogAddCtrl', function ($scope, apiHandler, $rootScope) {
         $scope.addData = () => {
             $scope.data.image = $rootScope.uploadedFile;
 
-            //check in user-interface Layer (client side).
             if ($scope.data.title === undefined || $scope.data.title == null || $scope.data.title === "") {
                 Swal.fire('Please enter title!!');
                 return;

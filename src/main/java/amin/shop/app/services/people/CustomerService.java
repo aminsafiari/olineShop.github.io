@@ -22,7 +22,6 @@ public class CustomerService {
 
     //region CRUD -> Read.
 
-    // Teacher Code.
     public Customer getById(long id) {
         Optional<Customer> data = repository.findById(id);
         if (data.isPresent()) return data.get();
@@ -34,7 +33,6 @@ public class CustomerService {
         return data;
     }
 
-    //important code (pagination). for work with big Data.
     public List<Customer> getAll(Integer pageSize, Integer pageNumber) {
         //pagination.
         Pageable page = PageRequest.of(pageNumber, pageSize, Sort.by("id"));
@@ -47,19 +45,11 @@ public class CustomerService {
         return repository.count();
     }
 
-    // My Code.
-    /*public Customer getById(long id) {
-        Optional<Customer> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
-
     //endregion
 
     //CRUD -> Create.
     //For Insert Customer use This Code.
     public Customer add(Customer data) {
-        //Todo: need check and tick(such as UserService -> add) and need any(invoice, orderItem...).
         return repository.save(data);
     }
 
@@ -90,15 +80,4 @@ public class CustomerService {
         return true;
     }
 
-//--------------------------------
-    /*public List<Customer> findAllOrderByItemOrder() {
-        return repository.findAll(Sort.by("itemOrder"));
-    }*/
-
-//-------------------------------------------------------------
-    /*public List<Customer> findAllOrderByItemOrder() {
-        List<Customer> list = new ArrayList<>();
-        repository.findAll(Sort.by("itemOrder")).forEach(list::add);
-        return list;
-    }*/
 }

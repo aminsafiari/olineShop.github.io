@@ -9,7 +9,6 @@
                 <div class="row">
                     <div class="col">
                         <div class="row">
-                            <!-- for sizes login form need to write div col-3 -->
                             <div class="col login-box-holder">
                                 <div class="form-group mb-3">
                                     <label for="title">Title</label>
@@ -33,33 +32,6 @@
                                         <option value="false" ng-selected="data.enable === false">No</option>
                                     </select>
                                 </div>
-                                <!-- teacher code for color and size -->
-                                <!--<div class="form-group mb-3 border-form ps-3 p-3">
-                                    <label class="pb-2" for="colors">Colors</label>
-                                    <div class="form-check" id="colors"
-                                         ng-repeat="item in colors">
-                                        <input class="form-check-input"
-                                               id="colors_{{item.id}}"
-                                               ng-checked="isSelected(data.colors, item)"
-                                               type="checkbox" value="{{item.id}}"
-                                               ng-change="onColorChange(item)"
-                                               ng-model="data.colors[item.id]">
-                                        <label class="form-check-label"
-                                               for="colors_{{item.id}}">{{item.name}}</label>
-                                    </div>
-                                </div>-->
-                                <!--<div class="form-group mb-3  border-form ps-3 p-3">
-                                    <label class="pb-2" for="sizes">Sizes</label>
-                                    <div id="sizes" ng-repeat="item in sizes">
-                                        <input id="sizes_{{item.id}}" ng-click="onSizeChange(item)"
-                                               ng-checked="isSelected(selectedSizes,item)"
-                                               type="checkbox" value="{{item.id}}"
-                                               ng-model="selectedSizes[item.id]">
-                                        <label for="sizes_{{item.id}}">{{item.title}}</label>
-                                    </div>
-                                </div>-->
-
-                                <!-- My code for color and size -->
                                 <div class="form-group mb-3 border-form ps-3 p-3">
                                     <label class="pb-2" for="colors">Colors</label>
                                     <div class="form-check" id="colors"

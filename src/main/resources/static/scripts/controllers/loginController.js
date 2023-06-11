@@ -2,7 +2,6 @@ app.controller("loginCtrl", function ($scope, apiHandler, $cookies) {
     $scope.user = {};
 
     $scope.doLogin = () => {
-        //if you need debug any where in javascript, write << debugger; >>; action such as breakpoint.
         apiHandler.callPost("user/login",
             $scope.user,
             (response) => {

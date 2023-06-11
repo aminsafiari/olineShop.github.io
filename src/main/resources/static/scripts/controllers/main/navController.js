@@ -13,8 +13,8 @@ app.controller("navCtrl", function ($scope, mainApiHandler, $rootScope) {
         });
     }
 
-    $scope.search = () => {
-        location.href = "/product/search?key=" + $scope.searchKey;
+    $scope.productsSearch = () => {
+        location.href = "/productsSearch/" + $scope.searchKey;
     }
 
     $scope.getNavData();

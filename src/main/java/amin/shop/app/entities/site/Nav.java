@@ -10,10 +10,10 @@ import javax.persistence.Id;
 public class Nav {
     @Id
     @GeneratedValue
-    //شناسه pk به صورت unique برای دیتا بیس که همه موجودیت هایمان باید داشته باشند.
+    //The pk identifier is unique for the database that all our entities must have.
     private long id;
 
-    //    @Column(name="name")
+    //@Column(name="name")
     private String title;
     private String link;
     //is this field enable or unable.

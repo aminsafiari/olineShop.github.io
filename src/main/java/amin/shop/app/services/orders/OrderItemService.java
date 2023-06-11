@@ -15,21 +15,11 @@ public class OrderItemService {
     private OrderItemRepository repository;
 
     //region CRUD -> Read.
-
-    // Teacher Code.
     public OrderItem getById(long id) {
         Optional<OrderItem> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
-
-    // My Code.
-    /*public OrderItem getById(long id) {
-        Optional<OrderItem> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
-
     //endregion
 
     //CRUD -> Create.
@@ -60,15 +50,4 @@ public class OrderItemService {
         return true;
     }
 
-//--------------------------------
-    /*public List<OrderItem> findAllOrderByItemOrder() {
-        return repository.findAll(Sort.by("itemOrder"));
-    }*/
-
-//-------------------------------------------------------------
-    /*public List<OrderItem> findAllOrderByItemOrder() {
-        List<OrderItem> list = new ArrayList<>();
-        repository.findAll(Sort.by("itemOrder")).forEach(list::add);
-        return list;
-    }*/
 }

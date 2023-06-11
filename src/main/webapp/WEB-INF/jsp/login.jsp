@@ -7,12 +7,10 @@
 
 </head>
 <body ng-app="onlineShoppApp">
-<%--<jsp:include page="partial/home/homeNav.jsp"></jsp:include>--%>
 
 <div class="container-fluid" ng-controller="loginCtrl">
     <div class="row">
         <div class="col-3"></div>
-        <%-- for sizes login form need to write div col-3 --%>
         <div class="col login-box-holder">
             <h3>Login to panel</h3>
             <form>

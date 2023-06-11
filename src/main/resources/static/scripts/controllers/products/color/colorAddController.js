@@ -4,7 +4,6 @@ app.controller('colorAddCtrl', function ($scope, apiHandler) {
 
     $scope.addData = () => {
 
-        //check in user-interface Layer (client side).
         if ($scope.data.name === undefined || $scope.data.name == null || $scope.data.name === "") {
             Swal.fire('Please enter name!!');
             return;

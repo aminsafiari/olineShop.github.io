@@ -31,23 +31,18 @@
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <%--<th scope="col">#</th>--%>
                                     <th scope="col">Item</th>
-                                    <%--<th scope="col">color</th>--%>
-                                    <%--<th scope="col">Size</th>--%>
                                     <th scope="col">Price</th>
                                     <th scope="col">Quantity</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <%-- TODO: (Practise) Add increase and decrease to the project. --%>
                                 <tr ng-show="dataList.length == 0">
                                     <td colspan="6" class="text-center">
                                         <h3 class="p-2  fw-bold">Your basket is empty!</h3>
                                     </td>
                                 </tr>
                                 <tr ng-repeat="data in dataList">
-                                    <%--                                    <th scope="row">{{ $index + 1 }}</th>--%>
                                     <td>
                                         <a class="text-decoration-none" title="show Details" target="_blank"
                                            href="/product/{{data.productId}}">
@@ -55,14 +50,6 @@
                                             <span class="ps-2">{{data.product.title}}</span>
                                         </a>
                                     </td>
-                                    <%--<td>
-                                        <div class="pt-2">
-                                            <div class="color-entity-box rounded-circle"
-                                                 style="background:{{data.color.value}}"></div>
-                                            <span class="color-title">{{data.color.name}}</span>
-                                        </div>
-                                    </td>--%>
-                                    <%--                                    <td>{{data.size.title}}</td>--%>
                                     <td>$ {{data.price}}</td>
                                     <td>{{data.count}}</td>
                                 </tr>
@@ -72,7 +59,6 @@
                                         <%--                                        <td colspan="3">#</td>--%>
                                         <td>Total</td>
                                         <td>
-                                            <%-- TODO: Discount implementation and vehicle patment,need to change manyPagecode,(part20 1:44). --%>
                                             <strong>$ {{totalPrice}}</strong>
                                         </td>
                                         <td>
@@ -133,17 +119,6 @@
                                         </div>
 
                                     </div>
-                                    <%--<div class="form-group mb-3">
-                                        &lt;%&ndash;                                        <label for="firstName">FirstName</label>&ndash;%&gt;
-                                        <input type="text" placeholder="FirstName" class="form-control" id="firstName"
-                                               ng-model="data.firstName">
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        &lt;%&ndash;                                        <label for="lastName">LastName</label>&ndash;%&gt;
-                                        <input type="text" placeholder="LastName" class="form-control" id="lastName"
-                                               ng-model="data.lastName">
-                                    </div>--%>
-
                                     <div class="row">
 
                                         <div class="col col-lg form-floating mb-3">
@@ -153,7 +128,6 @@
                                             <label for="username"
                                                    class="col-form-label">&nbsp;&nbsp;Username</label>
                                         </div>
-                                        <!--todo : check password is strong or not.-->
                                         <div class="col-lg form-floating mb-3">
                                             <input type="password" class="form-control" id="password"
                                                    ng-model="data.password" placeholder="Password">
@@ -162,21 +136,6 @@
                                         </div>
 
                                     </div>
-                                    <%--<div class="row form-group mb-3">
-                                        <label for="username">Username</label>
-                                        <input type="text" placeholder="Username" class="form-control" id="username"
-                                               ng-model="data.username">
-                                    </div>
-                                    <!--todo : check password is strong or not.-->
-                                    <div class="row form-group mb-3">
-                                        &lt;%&ndash;                                        <label for="password">Password</label>&ndash;%&gt;
-                                        <label for="password" class="col-sm-2 col-form-label">Password :</label>
-                                        <div class="col-sm-5">
-                                            <input type="password" class="form-control" id="password"
-                                                   ng-model="data.password">
-                                        </div>
-                                    </div>--%>
-
                                     <div class="form-floating mb-3">
                                         <input type="text" placeholder="Email" class="form-control" id="email"
                                                ng-model="data.email">

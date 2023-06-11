@@ -38,10 +38,7 @@ app.controller('productListCtrl', function ($scope, apiHandler, $rootScope) {
         $scope.changeMenu("product-edit");
     };
 
-    /* *delete item in product, is better disabled.
-    because if delete once product = delete any product that exist in this product that delete.*/
     $scope.deleteItem = (id) => {
-        //confirmation for delete or any think.i can use confirm javaScript(is simple) or use library <<sweetalert2>>.
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",

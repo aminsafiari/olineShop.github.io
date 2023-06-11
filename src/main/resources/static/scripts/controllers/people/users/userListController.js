@@ -39,7 +39,7 @@ app.controller('userListCtrl', function ($scope, apiHandler, $rootScope) {
     };
 
     $scope.deleteItem = (id) => {
-        //confirmation for delete or any think.i can use confirm javaScript(is simple) or use library <<sweetalert2>>.
+        //confirmation for delete or anyThink. i can use confirm javaScript(is simple) or use library <<sweetalert2>>.
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",

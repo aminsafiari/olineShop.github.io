@@ -19,19 +19,11 @@ public class FeatureService {
 
     //region CRUD -> Read.
 
-    // Teacher Code.
     public Feature getById(long id) {
         Optional<Feature> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
-
-    // My Code.
-    /*public Feature getById(long id) {
-        Optional<Feature> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 

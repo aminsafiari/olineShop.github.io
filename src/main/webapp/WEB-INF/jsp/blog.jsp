@@ -16,7 +16,6 @@
 <%-- Slider --%>
 <div>
     <img src="images/sliders/blog.jpg" width="100%">
-    <%-- <img src="images/blog.jpg" style="width: 100%;height: 550px;"> --%>
 </div>
 
 <%-- Cards --%>

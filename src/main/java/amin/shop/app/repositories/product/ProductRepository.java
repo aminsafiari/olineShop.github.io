@@ -8,6 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.naming.directory.SearchResult;
 import java.util.List;
 
 @Repository
@@ -39,7 +40,7 @@ public interface ProductRepository
     Page<Product> findAllByCategory(long categoryId, Pageable pageable);
 
     @Query("from Product where enable=true " +
-            "and (title like concat('%', :search,'%') " +
+                    "and (title like concat('%', :search,'%') " +
             "or description like concat('%', :search, '%'))")
     List<Product> findAllByEnableIsTrueAndTitleContainsOrDescriptionContains(String search);
 
@@ -56,6 +57,20 @@ public interface ProductRepository
      * @return Product List
      */
     List<Product> findTop6ByOrderByVisitCountDesc();
+
+    /**
+     * Find 6 cheapest products.
+     *
+     * @return Product List
+     */
+    List<Product> findTop6ByOrderByPriceAsc();
+
+    /**
+     * Find 6 expensive products.
+     *
+     * @return Product List
+     */
+    List<Product> findTop6ByOrderByPriceDesc();
 
     long countByExistsIsTrue();
 

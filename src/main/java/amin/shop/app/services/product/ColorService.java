@@ -21,7 +21,6 @@ public class ColorService {
 
     //region CRUD -> Read.
 
-    // Teacher Code.
     public Color getById(long id) {
         Optional<Color> data = repository.findById(id);
         if (data.isPresent()) return data.get();
@@ -44,13 +43,6 @@ public class ColorService {
         //pagination.
         return repository.count();
     }
-
-    // My Code.
-    /*public Color getById(long id) {
-        Optional<Color> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 

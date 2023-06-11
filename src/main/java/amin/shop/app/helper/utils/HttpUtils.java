@@ -34,8 +34,6 @@ public class HttpUtils<T> {
         String responseBody = responseEntity.getBody();
         T responseData = gson.fromJson(responseBody, getType());
         return responseData;
-        //        Object objectBody = gson.fromJson(responseBody, Object.class);
-//        return (T) objectBody;
     }
 
     public ResponseEntity<T> callGet(String address) {
@@ -50,7 +48,6 @@ public class HttpUtils<T> {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         return gson;
-//        return builder.create();
     }
 
     public Class<T>  getType() {

@@ -1,4 +1,4 @@
-package amin.shop.app.helper.payment.zarinpal.models;
+package amin.shop.app.helper.payment.nextpay.models;
 
 import java.io.Serializable;
 

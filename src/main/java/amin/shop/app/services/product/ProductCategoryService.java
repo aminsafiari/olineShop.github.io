@@ -20,8 +20,6 @@ public class ProductCategoryService {
     @Autowired
     private ProductCategoryRepository repository;
 
-    //why Autowired herself ProductCategory?!
-    //<<answer Down-cods in (deleteById) function.>>
     @Autowired
     private ProductService productService;
 
@@ -31,7 +29,6 @@ public class ProductCategoryService {
         return repository.findAllByEnableIsTrue(Sort.by("id"));
     }
 
-    // Teacher Code.
     public ProductCategory getById(long id) {
         Optional<ProductCategory> data = repository.findById(id);
         if (data.isPresent()) return data.get();
@@ -50,13 +47,6 @@ public class ProductCategoryService {
         //pagination.
         return repository.count();
     }
-
-    // My Code.
-    /*public ProductCategory getById(long id) {
-        Optional<ProductCategory> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 
@@ -86,7 +76,6 @@ public class ProductCategoryService {
         if (oldData == null) {
             throw new DataNotFoundException("data with id " + id + " not found!");
         }
-        // Autowired herself(ProductService) for this.
         List<Product> productList = productService.findAllByCategory(id);
         if (productList.size() > 0) throw new Exception("Please delete products in this category at first!");
         repository.deleteById(id);

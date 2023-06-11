@@ -1,17 +1,11 @@
-package amin.shop.app.helper.payment.zarinpal.models;
+package amin.shop.app.helper.payment.nextpay.models;
 
-public class VerifyRequest {
-    private String api_key;
+import java.io.Serializable;
+
+public class PaymentResponse implements Serializable {
     private String trans_id;
+    private int code;
     private int amount;
-
-    public String getApi_key() {
-        return api_key;
-    }
-
-    public void setApi_key(String api_key) {
-        this.api_key = api_key;
-    }
 
     public String getTrans_id() {
         return trans_id;
@@ -21,6 +15,14 @@ public class VerifyRequest {
         this.trans_id = trans_id;
     }
 
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
     public int getAmount() {
         return amount;
     }
@@ -28,4 +30,5 @@ public class VerifyRequest {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
 }

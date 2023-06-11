@@ -32,8 +32,6 @@ public class InvoiceController {
 
 
     @GetMapping("/find")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     //cid -> customer_id
     public ServiceResponse<Invoice> find(@RequestParam long cid,
                                          @RequestParam Integer pageSize,
@@ -50,15 +48,11 @@ public class InvoiceController {
             List<Invoice> result = service.findByCustomer(cid, pageSize, pageNumber);
             return new ServiceResponse<Invoice>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Invoice>(e);
         }
     }
 
     @GetMapping("/getInfo/{id}")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Invoice> search(@PathVariable long id, HttpServletRequest request) {
         try {
             Invoice result = service.getById(id);
@@ -70,51 +64,36 @@ public class InvoiceController {
             }
             return new ServiceResponse<Invoice>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Invoice>(e);
         }
     }
 
     @PostMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Invoice> add(@RequestBody Invoice data) {
         try {
             Invoice result = service.add(data);
             return new ServiceResponse<Invoice>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Invoice>(e);
         }
     }
 
-    //you can update handle with @PutMapping is better and true, but for this simple client environment work use this annotation.
     @PutMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Invoice> update(@RequestBody Invoice data) {
         try {
             Invoice result = service.update(data);
             return new ServiceResponse<Invoice>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Invoice>(e);
         }
     }
 
     @DeleteMapping("/{id}")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Boolean> delete(@PathVariable long id) {
         try {
             boolean result = service.deleteById(id);
             return new ServiceResponse<Boolean>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Boolean>(e);
         }
     }

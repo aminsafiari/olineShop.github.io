@@ -69,6 +69,13 @@ public class HomeController {
         return "productsCategory";
     }
 
+    //search products
+    @GetMapping("productsSearch/{key}")
+    public String search(@PathVariable String key, Model model) {
+        model.addAttribute("dataSearch", key);
+        return "productsSearch";
+    }
+
     //For show single page products.
     @GetMapping("product/{id}")
     public String product(@PathVariable Long id, Model model) {

@@ -19,8 +19,6 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<StartPaymentVM> addPayment(@RequestBody PaymentVM data) {
         try {
             StartPaymentVM startPaymentVM = paymentService.addPayment(data);
@@ -28,8 +26,6 @@ public class PaymentController {
             startPaymentVM.setLocation(location);
             return new ServiceResponse<StartPaymentVM>(ResponseStatus.SUCCESS, startPaymentVM);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<StartPaymentVM>(e);
         }
     }

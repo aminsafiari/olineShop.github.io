@@ -6,7 +6,6 @@ app.controller('contentAddCtrl', ['$scope', 'apiHandler', 'textAngularManager', 
 
     $scope.addData = () => {
 
-        //check in user-interface Layer (client side).
         if ($scope.data.key === undefined || $scope.data.key == null || $scope.data.key === "") {
             Swal.fire('Please enter key!!');
             return;

@@ -30,6 +30,18 @@ app.controller("productsCtrl", function ($scope, mainApiHandler, $rootScope) {
         });
     }
 
+    $scope.getCheapestProductData = () => {
+        mainApiHandler.callGet("product/cheapestProducts/", (response) => {
+            $scope.productsList = response.dataList;
+        });
+    }
+
+    $scope.getExpensiveProductData = () => {
+        mainApiHandler.callGet("product/expensiveProducts/", (response) => {
+            $scope.productsList = response.dataList;
+        });
+    }
+
     $scope.changeFilter = (filter) => {
         $scope.selectedFilter = filter;
         switch (filter) {
@@ -43,9 +55,11 @@ app.controller("productsCtrl", function ($scope, mainApiHandler, $rootScope) {
                 break;
             case 'cheapest':
                 $scope.selectedTitle = 'Cheapest Products';
+                $scope.getCheapestProductData();
                 break;
             case 'expensive':
                 $scope.selectedTitle = 'Expensive Products';
+                $scope.getExpensiveProductData();
                 break;
         }
     }

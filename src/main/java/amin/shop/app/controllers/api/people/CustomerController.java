@@ -34,60 +34,43 @@ public class CustomerController {
             long totalCount = service.getAllCount();
             return new ServiceResponse<Customer>(ResponseStatus.SUCCESS, result, totalCount);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Customer>(e);
         }
 
     }
 
     @GetMapping("/{id}")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Customer> getById(@PathVariable long id) {
         try {
             Customer result = service.getById(id);
             return new ServiceResponse<Customer>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Customer>(e);
         }
     }
 
     @PostMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Customer> add(@RequestBody Customer data) {
         try {
             Customer result = service.add(data);
             return new ServiceResponse<Customer>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Customer>(e);
         }
     }
 
-    //you can update handle with @PutMapping is better and true, but for this simple client environment work use this annotation.
     @PutMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Customer> update(@RequestBody Customer data) {
         try {
             Customer result = service.update(data);
             return new ServiceResponse<Customer>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Customer>(e);
         }
     }
 
     //For edit customer information in customer dashboard.
     @PutMapping("/updateInfo")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Customer> updateInfo(@RequestBody CustomerVM data, HttpServletRequest request) {
         try {
             UserVM userVM = getUserVMFromToken(request);
@@ -101,22 +84,16 @@ public class CustomerController {
             userService.update(data.getUserInfo());
             return new ServiceResponse<Customer>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Customer>(e);
         }
     }
 
     @DeleteMapping("/{id}")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Boolean> delete(@PathVariable long id) {
         try {
             boolean result = service.deleteById(id);
             return new ServiceResponse<Boolean>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Boolean>(e);
         }
     }

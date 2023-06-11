@@ -8,11 +8,9 @@ app.service("mainApiHandler", function ($http) {
             data: data
         };
         $http(request).then((response) => {
-            //when this work that you have Response.
             if (response != null && response.data != null) {
                 const result = response.data;
                 if (result.status == "SUCCESS") {
-                    //call method onSuccess that selfWrite --> (response)=>{}
                     onSuccess(result);
                 } else if (result.hasError) {
                     Swal.fire({
@@ -29,7 +27,6 @@ app.service("mainApiHandler", function ($http) {
                 }
             }
         }, (err) => {
-            //error in internal layer or webServer error.
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
@@ -46,11 +43,9 @@ app.service("mainApiHandler", function ($http) {
             method: "GET"
         };
         $http(request).then((response) => {
-            //when this work that you have Response.
             if (response != null && response.data != null) {
                 const result = response.data;
                 if (result.status == "SUCCESS") {
-                    //call method onSuccess that selfWrite --> (response)=>{}
                     onSuccess(result);
                 } else if (result.hasError) {
                     Swal.fire({
@@ -72,7 +67,6 @@ app.service("mainApiHandler", function ($http) {
                 location.href = "/login";
                 return;
             }
-            //error in internal layer or webServer error.
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
@@ -90,7 +84,6 @@ app.service("mainApiHandler", function ($http) {
             data: data
         }
         $http(request).then((response) => {
-            //when this work that you have Response.
             if (response != null && response.data != null) {
                 const result = response.data;
                 if (result.status == "SUCCESS") {
@@ -110,7 +103,6 @@ app.service("mainApiHandler", function ($http) {
                 }
             }
         }, (err) => {
-            //error in internal layer or webServer error.
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
@@ -127,7 +119,6 @@ app.service("mainApiHandler", function ($http) {
             method: "DELETE",
         }
         $http(request).then((response) => {
-            //when this work that you have Response.
             if (response != null && response.data != null) {
                 const result = response.data;
                 if (result.status === "SUCCESS") {
@@ -147,7 +138,6 @@ app.service("mainApiHandler", function ($http) {
                 }
             }
         }, (err) => {
-            //error in internal layer or webServer error.
             Swal.fire({
                 icon: 'error',
                 title: 'Error',

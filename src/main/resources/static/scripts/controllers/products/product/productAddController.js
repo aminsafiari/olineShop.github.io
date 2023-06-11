@@ -123,7 +123,6 @@ app.controller('productAddCtrl', function ($scope, apiHandler, $rootScope) {
         })
     };
 
-    //call for run Methods when dont Directly call.
     $scope.getColors();
     $scope.getSizes();
 

@@ -6,10 +6,7 @@
 
     <%--  for clean code we transformed the links and scripts path  --%>
     <jsp:include page="partial/home/homeHeader.jsp"></jsp:include>
-    <%--  becuase slider for this, write this.  --%>
-    <%--    <link rel="stylesheet" href="libs/carousel-lazy-loading-square/square1.min.css"/>--%>
-    <%--    <link rel="stylesheet" href="libs/carousel-lazy-loading-square/square2.css">--%>
-    <%--    <script src="libs/carousel-lazy-loading-square/square1.min.js"></script>--%>
+
     <script src="scripts/controllers/main/homeController.js"></script>
     <script src="scripts/controllers/main/sliderController.js"></script>
     <script src="scripts/controllers/main/productController.js"></script>
@@ -60,23 +57,6 @@
         </div>
     </div>
 
-    <%-- use lib caruosel-lazy --%>
-    <%--
-        <div class="slideshow top-slider position-relative">
-            <div ng-repeat="slider in sliderList">
-                <a href="{{slider.link}}">
-                    <img style="background-size: auto;" src="/api/utils/upload/files/{{slider.image}}"
-                         alt="{{slider.title}}">
-                    <div class="text_content">
-                        <h3>{{slider.title}}</h3>
-                        <h5>{{slider.description}}</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-        --%>
-
-
     <%-- Products --%>
     <div ng-controller="productCtrl">
         <h1 class="text-center fw-bold">New Product</h1>
@@ -97,9 +77,6 @@
                                             {{feature.value}} </small>
                                     </li>
                                 </ul>
-                                <%-- <p ng-repeat="feature in product.featuresDataList">
-                                     <small class="text-secondary"> {{feature.key}} : {{feature.value}} </small>
-                                 </p>--%>
                             </div>
                         </div>
                         <div class="card-footer">

@@ -28,15 +28,4 @@ public interface BlogRepository
     //for show in blog page in home page.
     Long countAllByStatusAndPublishDateLessThanEqual(BlogStatus status, Date publishDate);
 
-//----------------------
-    //این خودش از CrudRepository , extend میکنه.
-//    List<Blog> findAllByTitleContains(String title);//خبر
-
 }
-
-//-----------------------
-//generic:Long -> type of id, class Nav.<<dataType use should nonPrimitive types>>
-//CrudRepository-> use CRUD by jpa.
-/*public interface BlogRepository extends CrudRepository<Blog, Long> {
-
-}*/

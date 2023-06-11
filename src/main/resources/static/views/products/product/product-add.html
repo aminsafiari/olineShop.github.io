@@ -9,7 +9,6 @@
                 <div class="row">
                     <div class="col">
                         <div class="row">
-                            <!-- for sizes login form need to write div col-3 -->
                             <div class="col login-box-holder">
                                 <div class="form-group mb-3">
                                     <label for="title">Title</label>
@@ -36,8 +35,6 @@
                                 <div class="form-group mb-3">
                                     <label for="colors">Colors</label>
                                     <select class="form-control" multiple="multiple" id="colors" ng-model="data.colors">
-                                        <!--<option selected></option>-->
-                                        <!-- <<Multiple="multiple">> This allows the user to make multiple choices.  -->
                                         <option ng-repeat="item in colors" value="{{item.id}}">
                                             {{item.name}}
                                             ({{item.value}})
@@ -47,7 +44,6 @@
                                 <div class="form-group mb-3">
                                     <label for="sizes">Sizes</label>
                                     <select class="form-control" multiple="multiple" id="sizes" ng-model="data.sizes">
-                                        <!--<option selected></option>-->
                                         <option ng-repeat="item in sizes" value="{{item.id}}">
                                             {{item.title}}
                                         </option>

@@ -29,8 +29,6 @@ public class ProductController {
             long totalCount = service.getAllCount();
             return new ServiceResponse<Product>(ResponseStatus.SUCCESS, result, totalCount);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Product>(e);
         }
     }
@@ -55,8 +53,6 @@ public class ProductController {
             List<ProductVM> result = service.findTop6ByOrderByAddDateDesc();
             return new ServiceResponse<ProductVM>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<ProductVM>(e);
         }
 
@@ -69,8 +65,30 @@ public class ProductController {
             List<ProductVM> result = service.findTop6ByOrderByVisitCountDesc();
             return new ServiceResponse<ProductVM>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
+            return new ServiceResponse<ProductVM>(e);
+        }
+
+    }
+
+    //Find 6 cheapest products.
+    @GetMapping("/cheapestProducts")
+    public ServiceResponse<ProductVM> cheapestProduct() {
+        try {
+            List<ProductVM> result = service.findTop6ByOrderByPriceAsc();
+            return new ServiceResponse<ProductVM>(ResponseStatus.SUCCESS, result);
+        } catch (Exception e) {
+            return new ServiceResponse<ProductVM>(e);
+        }
+
+    }
+
+    //Find 6 cheapest products.
+    @GetMapping("/expensiveProducts")
+    public ServiceResponse<ProductVM> expensiveProduct() {
+        try {
+            List<ProductVM> result = service.findTop6ByOrderByPriceDesc();
+            return new ServiceResponse<ProductVM>(ResponseStatus.SUCCESS, result);
+        } catch (Exception e) {
             return new ServiceResponse<ProductVM>(e);
         }
 
@@ -88,80 +106,57 @@ public class ProductController {
             long totalCount = service.getAllCountByCategoryId(cid);
             return new ServiceResponse<ProductVM>(ResponseStatus.SUCCESS, result, totalCount);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<ProductVM>(e);
         }
     }
 
-    @GetMapping("")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
-    public ServiceResponse<Product> search(@RequestParam String key) {
+    @GetMapping("/search")
+    public ServiceResponse<ProductVM> search(@RequestParam String key) {
         try {
-            List<Product> result = service.search(key);
-            return new ServiceResponse<Product>(ResponseStatus.SUCCESS, result);
+            List<ProductVM> result = service.search(key);
+            return new ServiceResponse<ProductVM>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
-            return new ServiceResponse<Product>(e);
+            return new ServiceResponse<ProductVM>(e);
         }
     }
 
     @GetMapping("info/{id}")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<ProductVM> getById(@PathVariable long id) {
         try {
             Product result = service.getById(id);
             //return only ID's.
             return new ServiceResponse<ProductVM>(ResponseStatus.SUCCESS, new ProductVM(result));
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<ProductVM>(e);
         }
     }
 
     @PostMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Product> add(@RequestBody ProductVM data) {
         try {
             Product result = service.add(data);
             return new ServiceResponse<Product>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Product>(e);
         }
     }
 
-    //you can update handle with @PutMapping is better and true, but for this simple client environment work use this annotation.
     @PutMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Product> update(@RequestBody ProductVM data) {
         try {
             Product result = service.update(data);
             return new ServiceResponse<Product>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Product>(e);
         }
     }
 
     @DeleteMapping("/{id}")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Boolean> delete(@PathVariable long id) {
         try {
             boolean result = service.deleteById(id);
             return new ServiceResponse<Boolean>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Boolean>(e);
         }
     }

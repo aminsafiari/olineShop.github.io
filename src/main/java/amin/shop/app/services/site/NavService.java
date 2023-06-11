@@ -24,7 +24,6 @@ public class NavService {
         return repository.findAllByEnableIsTrue(Sort.by("itemOrder"));
     }
 
-    //important code (pagination). for work with big Data.
     public List<Nav> getAll(Integer pageSize, Integer pageNumber) {
         //pagination.
         Pageable page = PageRequest.of(pageNumber, pageSize, Sort.by("ItemOrder"));
@@ -37,19 +36,11 @@ public class NavService {
         return repository.count();
     }
 
-    // Teacher Code.
     public Nav getById(long id) {
         Optional<Nav> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
-
-    // My Code.
-    /*public Nav getById(long id) {
-        Optional<Nav> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     public Nav changeOrder(long id, int direction) throws Exception {
         Nav item = getById(id);
@@ -60,7 +51,6 @@ public class NavService {
                 //up
                 if (item.getItemOrder() <= 1)
                     return item;
-                //sibling => sister or brother.
                 Nav siblingItem = repository.findTopByItemOrder(item.getItemOrder() - 1);
                 //if siblingItem is null, mean not exist then item set (item.getItemOrder() - 1).
                 if (siblingItem == null) {
@@ -73,7 +63,6 @@ public class NavService {
             }
             case 0 -> {
                 //down
-                //sibling => sister or brother.
                 Nav siblingItem2 = repository.findTopByItemOrder(item.getItemOrder() + 1);
                 //if siblingItem is null, mean not exist then item set (item.getItemOrder() - 1).
                 if (siblingItem2 == null) {
@@ -88,7 +77,7 @@ public class NavService {
                 }
             }
         }
-        //item save where, because at tow case 0&1, item should save.
+        //item save, because at tow case 0&1, item should save.
         repository.save(item);
         return item;
     }
@@ -102,7 +91,6 @@ public class NavService {
             throw new Exception("Please enter title!");
         if (data.getLink() == null || data.getLink().equals(""))
             throw new Exception("Please enter title!");
-        //region for Auto save NUMBER itemOrder by Insert Nav data.
         Nav lastItem = repository.findTopByOrderByItemOrderDesc();
         if (lastItem != null && lastItem.getItemOrder() > 0) {
             data.setItemOrder(lastItem.getItemOrder() + 1);
@@ -135,16 +123,4 @@ public class NavService {
         return true;
     }
 
-
-//--------------------------------
-    /*public List<Nav> findAllOrderByItemOrder() {
-        return repository.findAll(Sort.by("itemOrder"));
-    }*/
-
-//-------------------------------------------------------------
-    /*public List<Nav> findAllOrderByItemOrder() {
-        List<Nav> list = new ArrayList<>();
-        repository.findAll(Sort.by("itemOrder")).forEach(list::add);
-        return list;
-    }*/
 }

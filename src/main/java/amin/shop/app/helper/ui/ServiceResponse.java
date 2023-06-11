@@ -11,7 +11,7 @@ public class ServiceResponse<T> implements Serializable {
     private ResponseStatus status;
     private boolean hasError;
     private String message;
-    //because pagination need variable totalCount.
+    //pagination need variable totalCount.
     private long totalCount;
 
     public ServiceResponse(ResponseStatus status, List<T> dataList) {

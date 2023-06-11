@@ -14,9 +14,6 @@
 <%-- for clean code, transformed navigation code to path:<< partial/homeNav.jsp >> and include this where. --%>
 <jsp:include page="partial/home/homeNav.jsp"></jsp:include>
 <%-- slide --%>
-<%--<div>
-    <img src="images/about.jpg" width="100%">
-</div>--%>
 <div>
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">

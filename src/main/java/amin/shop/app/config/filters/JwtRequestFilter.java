@@ -45,6 +45,8 @@ public class JwtRequestFilter implements Filter {
         excludeContainsUrls.add("/api/blog/info/");
         excludeContainsUrls.add("/api/product/getAll/");
         excludeContainsUrls.add("/api/product/info/");
+        excludeContainsUrls.add("/api/productsSearch/");
+        excludeContainsUrls.add("/api/product/search");
 
         excludeUrls.add("/api/user/login");
         excludeUrls.add("/api/color/");
@@ -53,6 +55,8 @@ public class JwtRequestFilter implements Filter {
         excludeUrls.add("/api/slider/");
         excludeUrls.add("/api/product/newProducts/");
         excludeUrls.add("/api/product/popularProducts/");
+        excludeUrls.add("/api/product/cheapestProducts/");
+        excludeUrls.add("/api/product/expensiveProducts/");
         excludeUrls.add("/api/content/getAllData/");
         excludeUrls.add("/api/blog/getAllData");
         excludeUrls.add("/api/productCategory/");
@@ -103,7 +107,5 @@ public class JwtRequestFilter implements Filter {
             ((HttpServletResponse) response).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, ex.getMessage());
         }
     }
-
-    //Third method is destroy(از بین رفتن).
 
 }

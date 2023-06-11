@@ -24,10 +24,6 @@ public class ProductService {
 
     @Autowired
     private ProductRepository repository;
-
-    //we have id (feature,color,size); for get objects (feature,color,size),
-    //->we needs @Autowired(FeatureService,ColorService,SizeService)
-//We can do better like using foreign key
     @Autowired
     private FeatureService featureService;
     @Autowired
@@ -43,20 +39,20 @@ public class ProductService {
         return repository.findAllByCategory(categoryId);
     }
 
-    public List<Product> search(String keyword) {
-        return repository.findAllByEnableIsTrueAndTitleContainsOrDescriptionContains(keyword);
-    }
-
-    // Teacher Code.
     public Product getById(long id) {
         Optional<Product> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
 
+    public List<ProductVM> search(String keyword) {
+        List<Product> all = repository.findAllByEnableIsTrueAndTitleContainsOrDescriptionContains(keyword);
+        List<ProductVM> vmList = new ArrayList<>();
+        all.forEach(x -> vmList.add(new ProductVM(x)));
+        return vmList;
+    }
+
     /**
-     * important code (pagination). for work with big Data.
-     *
      * @return page<prodcut> to List type.
      */
     public List<Product> getAll(Integer pageSize, Integer pageNumber) {
@@ -68,7 +64,6 @@ public class ProductService {
 
     /**
      * find by categoryId.
-     * important code (pagination). for work with big Data.
      *
      * @return page<prodcutVM> to List type.
      */
@@ -101,14 +96,6 @@ public class ProductService {
         return repository.countByCategoryId(categoryId);
     }
 
-
-    // My Code.
-    /*public Product getById(long id) {
-        Optional<Product> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
-
     //endregion
 
     //CRUD -> Create.
@@ -134,6 +121,32 @@ public class ProductService {
     public List<ProductVM> findTop6ByOrderByVisitCountDesc() {
         List<ProductVM> vmList = new ArrayList<>();
         List<Product> top6 = repository.findTop6ByOrderByVisitCountDesc();
+        top6.forEach(x -> vmList.add(new ProductVM(x)));
+
+        return vmList;
+    }
+
+    /**
+     * Find 6 cheapest products.
+     *
+     * @return ProductVM List
+     */
+    public List<ProductVM> findTop6ByOrderByPriceAsc() {
+        List<ProductVM> vmList = new ArrayList<>();
+        List<Product> top6 = repository.findTop6ByOrderByPriceAsc();
+        top6.forEach(x -> vmList.add(new ProductVM(x)));
+
+        return vmList;
+    }
+
+    /**
+     * Find 6 expensive products.
+     *
+     * @return ProductVM List
+     */
+    public List<ProductVM> findTop6ByOrderByPriceDesc() {
+        List<ProductVM> vmList = new ArrayList<>();
+        List<Product> top6 = repository.findTop6ByOrderByPriceDesc();
         top6.forEach(x -> vmList.add(new ProductVM(x)));
 
         return vmList;
@@ -171,7 +184,6 @@ public class ProductService {
 
         //To avoid repetition in saving item
         if (data.getColors() != null) {
-//            synchronized (oldData.getColors()) {
             for (long colorId : data.getColors()) {
                 if (oldData.getColors().stream().map(x -> x.getId()).noneMatch(z -> z == colorId)) {
                     oldData.addColor(colorService.getById(colorId));

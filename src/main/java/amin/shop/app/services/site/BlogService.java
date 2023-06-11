@@ -26,14 +26,12 @@ public class BlogService {
         return repository.findAllByTitleContainsOrDescriptionContains(keyword);
     }
 
-    // Teacher Code.
     public Blog getById(long id) {
         Optional<Blog> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
 
-    //important code (pagination). for work with big Data.
     public List<Blog> getAll(Integer pageSize, Integer pageNumber) {
         //pagination.
         Pageable page = PageRequest.of(pageNumber, pageSize, Sort.by("publishDate"));
@@ -46,8 +44,7 @@ public class BlogService {
         return repository.count();
     }
 
-    //for show in blog page in home page.
-    //important code (pagination). for work with big Data and search status & publishDate.
+    //To display the blog page on the home page.
     public List<Blog> getAllData(Integer pageSize, Integer pageNumber) {
         //pagination.
         Pageable page = PageRequest.of(pageNumber, pageSize, Sort.by("publishDate").descending());
@@ -59,13 +56,6 @@ public class BlogService {
         //pagination.
         return repository.countAllByStatusAndPublishDateLessThanEqual(BlogStatus.PUBLISHED, new Date());
     }
-
-    // My Code.
-    /*public Blog getById(long id) {
-        Optional<Blog> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 
@@ -113,16 +103,4 @@ public class BlogService {
         return repository.save(oldData);
     }
 
-
-//--------------------------------
-    /*public List<Blog> findAllOrderByItemOrder() {
-        return repository.findAll(Sort.by("itemOrder"));
-    }*/
-
-//-------------------------------------------------------------
-    /*public List<Blog> findAllOrderByItemOrder() {
-        List<Blog> list = new ArrayList<>();
-        repository.findAll(Sort.by("itemOrder")).forEach(list::add);
-        return list;
-    }*/
 }

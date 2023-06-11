@@ -48,15 +48,6 @@
                         <img src="/images/socialMedia/linkedIn.png" width="55" style="margin-bottom: 3px;"></a>
                 </div>
 
-                <%--<div>
-                    <a href="{{ getContent('facebook_link') | removeHTMLTags }}" class="footer-social">
-                        <i class="fa fa-link"></i></a>
-                    <a href="{{ getContent('twitter_link') | removeHTMLTags }}" class="footer-social">
-                        <i class="fa fa-link"></i></a>
-                    <a href="{{ getContent('linkedin_link') | removeHTMLTags }}" class="footer-social">
-                        <i class="fa fa-link"></i></a>
-                </div>--%>
-
             </div>
         </div>
     </div>

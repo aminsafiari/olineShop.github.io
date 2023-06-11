@@ -1,19 +1,17 @@
-package amin.shop.app.helper.payment.zarinpal.controllers;
+package amin.shop.app.helper.payment.nextpay.controllers;
 
 import amin.shop.app.entities.orders.Transactions;
-import amin.shop.app.helper.payment.zarinpal.models.PaymentRequest;
-import amin.shop.app.helper.payment.zarinpal.models.PaymentResponse;
-import amin.shop.app.helper.payment.zarinpal.models.VerifyRequest;
-import amin.shop.app.helper.payment.zarinpal.models.VerifyResponse;
+import amin.shop.app.helper.payment.nextpay.models.PaymentRequest;
+import amin.shop.app.helper.payment.nextpay.models.PaymentResponse;
+import amin.shop.app.helper.payment.nextpay.models.VerifyRequest;
+import amin.shop.app.helper.payment.nextpay.models.VerifyResponse;
 import amin.shop.app.helper.uimodels.StartPaymentVM;
 import amin.shop.app.helper.utils.HttpUtils;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ZarinpalService {
+public class NexPayService {
 
     @Value("${nextpay.api_key}")
     private String api_key;

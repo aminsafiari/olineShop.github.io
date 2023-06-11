@@ -28,7 +28,6 @@ public class ContentService {
         return repository.findAll();
     }
 
-    //important code (pagination). for work with big Data.
     public List<Content> getAll(Integer pageSize, Integer pageNumber) {
         //pagination.
         Pageable page = PageRequest.of(pageNumber, pageSize, Sort.by("id"));
@@ -41,19 +40,11 @@ public class ContentService {
         return repository.count();
     }
 
-    // Teacher Code.
     public Content getById(long id) {
         Optional<Content> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
-
-    // My Code.
-    /*public Content getById(long id) {
-        Optional<Content> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 
@@ -84,16 +75,4 @@ public class ContentService {
         return true;
     }
 
-
-//--------------------------------
-    /*public List<Content> findAllOrderByItemOrder() {
-        return repository.findAll(Sort.by("itemOrder"));
-    }*/
-
-//-------------------------------------------------------------
-    /*public List<Content> findAllOrderByItemOrder() {
-        List<Content> list = new ArrayList<>();
-        repository.findAll(Sort.by("itemOrder")).forEach(list::add);
-        return list;
-    }*/
 }

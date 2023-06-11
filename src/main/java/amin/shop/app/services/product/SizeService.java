@@ -26,14 +26,12 @@ public class SizeService {
         return repository.findAll();
     }
 
-    // Teacher Code.
     public Size getById(long id) {
         Optional<Size> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
 
-    //important code (pagination). for work with big Data.
     public List<Size> getAll(Integer pageSize, Integer pageNumber) {
         //pagination.
         Pageable page = PageRequest.of(pageNumber, pageSize, Sort.by("id"));
@@ -45,14 +43,6 @@ public class SizeService {
         //pagination.
         return repository.count();
     }
-
-
-    // My Code.
-    /*public Size getById(long id) {
-        Optional<Size> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 

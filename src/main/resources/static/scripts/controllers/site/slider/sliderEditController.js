@@ -9,7 +9,6 @@ app.controller('sliderEditCtrl', function ($scope, apiHandler, $rootScope) {
             $scope.data.image = $rootScope.uploadedFile;
         }
 
-        //check in user-interface Layer (client side).
         if ($scope.data.title === undefined || $scope.data.title == null || $scope.data.title === "") {
             Swal.fire('Please enter title!!');
             return;
@@ -35,7 +34,6 @@ app.controller('sliderEditCtrl', function ($scope, apiHandler, $rootScope) {
         }, true);
     };
 
-//better is give data from database because Maybe someone else is changing the data.
     $scope.getData = () => {
         apiHandler.callGet("slider/" + $scope.id, (response) => {
             $scope.data = response.dataList[0];

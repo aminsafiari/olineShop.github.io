@@ -22,6 +22,4 @@ public interface SliderRepository
     //the first have this itemOrder, give.
     Slider findTopByItemOrder(int itemOrder);
 
-
-//    List<Slider> findAll();
 }

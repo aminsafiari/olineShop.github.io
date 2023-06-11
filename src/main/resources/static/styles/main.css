@@ -53,10 +53,8 @@ body {
 
 .main-footer {
     background-color: #282828;
-    /*padding: 85px 60px;*/
     padding: 60px 0px 20px;
     color: #fff;
-    /*for debug footer, review body css*/
     margin-top: auto;
 }
 
@@ -66,21 +64,15 @@ body {
 }
 
 .footer-social {
-    /*background-color: #525252;*/
-    /*background-color: #423F3E;*/
     color: #fff;
     padding: 0px;
-    /*padding: 15px;*/
-    /*text-align: center;*/
     margin: 0 1em 0 0;
 }
 
 .footer-circle-item {
-    /*background-color: #525252;*/
     background-color: #423F3E;
     color: #fff;
     text-align: center;
-    /*padding: 15px;*/
     padding-left: 1px;
     padding-top: 10px;
     border-radius: 50%;
@@ -108,12 +100,6 @@ body {
     position: relative;
     top: -4px;
 }
-
-/*.footer-developer {
-    position: center;
-    color: rgba(85, 85, 165, 0.94);
-    font-weight: bold;
-}*/
 
 .product-cat-item {
     text-align: center;

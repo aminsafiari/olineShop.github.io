@@ -1,5 +1,6 @@
 app.controller("blogCtrl", function ($scope, mainApiHandler, $rootScope) {
 
+    //for make active nav Title.
     $rootScope.page = "Blog";
 
     $scope.query = {

@@ -1,6 +1,6 @@
 app.controller("productInfoCtrl", function ($scope, mainApiHandler, $rootScope, $cookies) {
 
-    //For activate in list.
+    //for make active nav Title.
     $rootScope.page = "Products";
     //For give product id from server.
     $scope.dataId = 0;
@@ -131,7 +131,7 @@ app.controller("productInfoCtrl", function ($scope, mainApiHandler, $rootScope, 
             $scope.orderItemList = [];
             return;
         }
-        // $scope.orderItemList = $cookies.get("basket");
+        //$scope.orderItemList = $cookies.get("basket");
         //Converts the json string in the cookies into an object.
         $scope.orderItemList = JSON.parse($cookies.get("basket"));
     }

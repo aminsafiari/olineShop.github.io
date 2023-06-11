@@ -24,7 +24,7 @@ app.controller('userEditCtrl', function ($scope, apiHandler, $rootScope) {
         }, true);
     };
 
-//better is give data from database because Maybe someone else is changing the data.
+    //better is give data from database because Maybe someone else is changing the data.
     $scope.getData = () => {
         apiHandler.callGet("user/" + $scope.id, (response) => {
             $scope.data = response.dataList[0];

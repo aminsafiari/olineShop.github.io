@@ -7,8 +7,7 @@ import amin.shop.app.entities.people.Customer;
 import amin.shop.app.entities.people.User;
 import amin.shop.app.entities.products.Product;
 import amin.shop.app.enums.PaymentType;
-import amin.shop.app.helper.payment.zarinpal.controllers.ZarinpalService;
-import amin.shop.app.helper.payment.zarinpal.models.VerifyRequest;
+import amin.shop.app.helper.payment.nextpay.controllers.NexPayService;
 import amin.shop.app.helper.uimodels.PaymentVM;
 import amin.shop.app.helper.uimodels.StartPaymentVM;
 import amin.shop.app.services.people.CustomerService;
@@ -17,7 +16,6 @@ import amin.shop.app.services.product.ColorService;
 import amin.shop.app.services.product.ProductService;
 import amin.shop.app.services.product.SizeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -42,7 +40,7 @@ public class PaymentService {
     @Autowired
     private ProductService productService;
     @Autowired
-    private ZarinpalService zarinpalService;
+    private NexPayService nexPayService;
     @Autowired
     private TransactionsService transactionsService;
 
@@ -100,7 +98,7 @@ public class PaymentService {
     public String goToPayment(StartPaymentVM startPaymentVM) throws Exception {
         String result = "#";
         if (startPaymentVM.getPaymentType() == PaymentType.NextPay) {
-            result = zarinpalService.goToPayment(startPaymentVM);
+            result = nexPayService.goToPayment(startPaymentVM);
         }
         transactionsService.add(startPaymentVM);
         return result;
@@ -109,7 +107,7 @@ public class PaymentService {
     public Transactions doVerify(Transactions transactions) throws Exception {
         Transactions result = null;
         if (transactions.getPaymentType() == PaymentType.NextPay) {
-            result = zarinpalService.goToVerify(transactions);
+            result = nexPayService.goToVerify(transactions);
             if (result.getTransactionVerifyCode() == 0) {
                 Invoice invoice = invoiceService.getById(result.getInvoice().getId());
                 invoice.setPayedDate(new Date());

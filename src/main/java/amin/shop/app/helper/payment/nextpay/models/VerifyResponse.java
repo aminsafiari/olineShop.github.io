@@ -1,4 +1,4 @@
-package amin.shop.app.helper.payment.zarinpal.models;
+package amin.shop.app.helper.payment.nextpay.models;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,18 +13,6 @@ public class VerifyResponse {
     private String customer_phone;
     private String custom;
     private String created_at;
-
-    /*public static class CustomData implements Serializable {
-        private String payerDesc;
-
-        public String getPayerDesc() {
-            return payerDesc;
-        }
-
-        public void setPayerDesc(String payerDesc) {
-            this.payerDesc = payerDesc;
-        }
-    }*/
 
     public int getCode() {
         return code;
@@ -89,11 +77,6 @@ public class VerifyResponse {
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
-
-    /*public CustomData getCustomData() {
-        Gson gson = new Gson();
-        return gson.fromJson(custom, CustomData.class);
-    }*/
 
     public Date getCreatedAt() throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

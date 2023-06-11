@@ -59,8 +59,6 @@ public class DashboardController {
 
             return new ServiceResponse<DashboardVM>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<DashboardVM>(e);
         }
     }

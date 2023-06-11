@@ -32,7 +32,6 @@ public class InvoiceService {
 
     //region CRUD -> Read.
 
-    // Teacher Code.
     public Invoice getById(long id) {
         Optional<Invoice> data = repository.findById(id);
         if (data.isPresent()) return data.get();
@@ -47,13 +46,6 @@ public class InvoiceService {
     public long getPayedCount() {
         return repository.countByPayedDateIsNotNull();
     }
-
-    // My Code.
-    /*public Invoice getById(long id) {
-        Optional<Invoice> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 

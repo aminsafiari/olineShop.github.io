@@ -32,8 +32,6 @@ public class UserController {
     private CustomerService customerService;
 
     @PostMapping("/login")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<UserVM> login(@RequestBody User user) {
         User userData = service.auth(user.getUsername(), user.getPassword());
         if (userData == null)
@@ -56,29 +54,21 @@ public class UserController {
             long totalCount = service.getAllCount();
             return new ServiceResponse<UserVM>(ResponseStatus.SUCCESS, resultVM, totalCount);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<UserVM>(e);
         }
     }
 
     @GetMapping("/{id}")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<UserVM> search(@PathVariable long id) {
         try {
             User result = service.getById(id);
             return new ServiceResponse<UserVM>(ResponseStatus.SUCCESS, new UserVM(result));
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<UserVM>(e);
         }
     }
 
     @GetMapping("/getUserInfo")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<UserVM> getUserInfo(HttpServletRequest request) {
         try {
             //region copy this code from <<JwtRequestFilter>>.
@@ -103,51 +93,36 @@ public class UserController {
 
             return new ServiceResponse<UserVM>(ResponseStatus.SUCCESS, user);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<UserVM>(e);
         }
     }
 
     @PostMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<UserVM> add(@RequestBody User data) {
         try {
             User result = service.add(data);
             return new ServiceResponse<UserVM>(ResponseStatus.SUCCESS, new UserVM(result));
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<UserVM>(e);
         }
     }
 
-    //you can update handle with @PutMapping is better and true, but for this simple client environment work use this annotation.
     @PutMapping("/")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<UserVM> update(@RequestBody User data) {
         try {
             User result = service.update(data);
             return new ServiceResponse<UserVM>(ResponseStatus.SUCCESS, new UserVM(result));
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<UserVM>(e);
         }
     }
 
     @DeleteMapping("/{id}")
-    //if @PostMapping use @RequestBody (Read : Query String -> Body)
-    //if @GetMapping use @RequestPram (Read : Query String -> Header)
     public ServiceResponse<Boolean> delete(@PathVariable long id) {
         try {
             boolean result = service.deleteById(id);
             return new ServiceResponse<Boolean>(ResponseStatus.SUCCESS, result);
         } catch (Exception e) {
-            //not god this exception handle. you need to search how exception handling with annotation and save to database(create new entities ExceptionLogs) or write filter,
-            //and return << ServiceResponse<...>(e);
             return new ServiceResponse<Boolean>(e);
         }
     }

@@ -56,19 +56,11 @@ public class UserService {
     }
     //region CRUD -> Read.
 
-    // Teacher Code.
     public User getById(long id) {
         Optional<User> data = repository.findById(id);
         if (data.isPresent()) return data.get();
         return null;
     }
-
-    // My Code.
-    /*public User getById(long id) {
-        Optional<User> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 
@@ -88,7 +80,6 @@ public class UserService {
         if (data.getEmail() == null || data.getEmail().equals("")) {
             throw new Exception("Please enter email!");
         }
-        //TODO: ex: check password strength(send this part code from portal java fro teacher).
         data.setPassword(securityUtils.encryptSHA1(data.getPassword()));
         return repository.save(data);
     }
@@ -107,8 +98,6 @@ public class UserService {
         if (data.getPassword() != null && !data.getPassword().equals("")) {
             oldData.setPassword(securityUtils.encryptSHA1(data.getPassword()));
         }
-        //better for change password have other method.
-        //        oldData.setPassword(data.getPassword());
         return repository.save(oldData);
     }
 

@@ -46,7 +46,6 @@
                    ng-class="{'active' : selectedFilter === 'popular'}">Popular</a>
                 <a href="" class="list-group-item list-group-item-action" ng-click="changeFilter('new')"
                    ng-class="{'active' : selectedFilter === 'new'}">New</a>
-                <%-- TODO:<repository-> from in price(orderby thisend and append and give 6 product). --%>
                 <a href="" class="list-group-item list-group-item-action" ng-click="changeFilter('cheapest')"
                    ng-class="{'active' : selectedFilter === 'cheapest'}">Cheapest</a>
                 <a href="" class="list-group-item list-group-item-action" ng-click="changeFilter('expensive')"

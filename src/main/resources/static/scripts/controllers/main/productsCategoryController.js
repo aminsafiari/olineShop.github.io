@@ -1,7 +1,7 @@
 app.controller("productsCategoryCtrl", function ($scope, mainApiHandler, $rootScope) {
 
-    //For activate in list.
-    $rootScope.page = "Product";
+    //for make active nav Title.
+    $rootScope.page = "Products";
     //For give blog id from server.
     $scope.dataId = 0;
     //For get data from response.

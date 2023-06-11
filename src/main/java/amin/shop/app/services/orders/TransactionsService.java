@@ -19,7 +19,6 @@ public class TransactionsService {
 
     //region CRUD -> Read.
 
-    // Teacher Code.
     public Transactions getByTransId(String trans_id) {
         Transactions data = repository.findByTrans(trans_id);
         return data;
@@ -30,13 +29,6 @@ public class TransactionsService {
         if (data.isPresent()) return data.get();
         return null;
     }
-
-    // My Code.
-    /*public Transactions getById(long id) {
-        Optional<Transactions> data = repository.findById(id);
-        if (data.isEmpty()) return null;
-        return data.get();
-    }*/
 
     //endregion
 

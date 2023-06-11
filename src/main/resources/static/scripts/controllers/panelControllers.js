@@ -1,5 +1,5 @@
 app.controller("panelCtrl", function ($scope, apiHandler, $cookies, $rootScope) {
-// It is better to have variables at the top of the page.
+
     $scope.template = "views/dashboard.html";
     $scope.templateName = "dashboard";
     $scope.templateGroup = "dashboard";
@@ -10,7 +10,6 @@ app.controller("panelCtrl", function ($scope, apiHandler, $cookies, $rootScope) 
             location.href = "/login";
             return;
         }
-        //mean call this method this where.
         $scope.getUserInfo();
     };
 
@@ -26,7 +25,6 @@ app.controller("panelCtrl", function ($scope, apiHandler, $cookies, $rootScope) 
 
     $scope.changeMenu = (templateName) => {
         $scope.templateName = templateName;
-        //call getMenuPrefix Method.
         $scope.template = $scope.getMenuPrefix(templateName);
         $scope.templateGroup = $scope.getMenuGroup(templateName);
     };
@@ -84,6 +82,7 @@ app.controller("panelCtrl", function ($scope, apiHandler, $cookies, $rootScope) 
         }
     };
 
+    //for activate menu title.
     $scope.getMenuGroup = (templateName) => {
         switch (templateName) {
             case "dashboard":
@@ -150,6 +149,5 @@ app.controller("panelCtrl", function ($scope, apiHandler, $cookies, $rootScope) 
         }
     }
 
-    //this mean, first run, call checkAccess Method that in top write.
     $scope.checkAccess();
 });

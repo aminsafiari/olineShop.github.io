@@ -37,8 +37,6 @@ app.controller('contentListCtrl', function ($scope, apiHandler, $rootScope) {
         $scope.changeMenu("content-edit");
     };
 
-    //dont need delete.because if i want delete data, i delete part of site information.
-
     $scope.changeOrder = (id, direction) => {
         Swal.fire({
             title: 'Are you sure?',

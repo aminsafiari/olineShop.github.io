@@ -204,26 +204,8 @@ app.controller('productEditCtrl', function ($scope, apiHandler, $rootScope) {
         $scope.selectedSizes.push(size.id);
     }
 
-    //Teacher code for onColorsChange and onSizesChange.
-    // $scope.onColorChange = (color) => {
-    //     //$scope.data.colors[color.id] ==> [] do such as << .equals or == in java >>
-    //     if ($scope.data.colors[color.id] && !$scope.selectedColors.some(x => x == color.id)) {
-    //         $scope.selectedColors.push(color.id);
-    //     } else if (!$scope.data.colors[color.id] && $scope.selectedColors.some(x => x == color.id)) {
-    //         //remove, if not check but exist in selectedColors.
-    //         for (let i = 0; i < $scope.selectedColors.length; i++) {
-    //             if ($scope.selectedColors[i] == color.id) {
-    //                 $scope.selectedColors.splice(i, 1);
-    //                 return;
-    //             }
-    //         }
-    //     }
-    // };
-
-    //call for run Methods when dont Directly call.
     $scope.getColors();
     $scope.getSizes();
-    //should call this methode after, other methods.
     $scope.getData();
 
 

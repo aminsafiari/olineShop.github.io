@@ -1,5 +1,6 @@
 app.controller("basketCtrl", function ($scope, mainApiHandler, $rootScope, $cookies) {
 
+    //for make active nav Title.
     $rootScope.page = "Basket";
 
     //get data from cookies.
@@ -10,7 +11,6 @@ app.controller("basketCtrl", function ($scope, mainApiHandler, $rootScope, $cook
     //get data for fill initial page.
     //fill from cookies.
     $scope.fillDataList = () => {
-        //TODO: fill from cookies.
         if ($cookies.get("basket") === undefined ||
             $cookies.get("basket") === null) {
             $scope.dataList = [];
@@ -24,7 +24,7 @@ app.controller("basketCtrl", function ($scope, mainApiHandler, $rootScope, $cook
     }
 
     $scope.removeItem = (data) => {
-        //confirmation for delete or any think.i can use confirm javaScript(is simple) or use library <<sweetalert2>>.
+        //confirmation for delete or anyThink. i can use confirm javaScript(is simple) or use library <<sweetalert2>>.
         Swal.fire({
             title: 'Are you sure?',
             text: "Do you want to remove this item from your basket?",

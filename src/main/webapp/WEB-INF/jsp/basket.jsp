@@ -38,7 +38,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <%-- TODO: (Practise) Add increase and decrease to the project. --%>
                         <tr ng-show="dataList.length == 0">
                             <td colspan="7" class="text-center">
                                 <h3 class="p-2  fw-bold">Your basket is empty!</h3>
@@ -74,7 +73,6 @@
                                 <td colspan="3">#</td>
                                 <td>Total</td>
                                 <td>
-                                    <%-- TODO: Discount implementation and vehicle patment,need to change manyPagecode,(part20 1:44). --%>
                                     <strong>$ {{totalPrice}}</strong>
                                 </td>
                                 <td>
@@ -99,8 +97,6 @@
         <div class="col-1"></div>
     </div>
 </div>
-
-<%--TODO : Show customer item orders--%>
 
 <%-- Footer --%>
 <jsp:include page="partial/home/homeFooter.jsp"></jsp:include>
