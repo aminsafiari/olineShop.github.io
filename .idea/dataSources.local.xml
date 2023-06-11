@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-211.7628.21">
+    <data-source name="OnlineShop/Hibernate" uuid="739ce001-7220-4914-81e7-8d9b37e17521">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="ATHENA" exact-version="0" />
+      <user-name>postgres</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

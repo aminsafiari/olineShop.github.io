@@ -1,0 +1,33 @@
+<div ng-controller="contentAddCtrl">
+    <div class="container p-3 mt-5">
+        <div class="card">
+            <div class="card-header">
+                Add a new Content
+                <a ng-click="changeMenu('content-list')" class="btn btn-sm btn-primary float-end">Return</a>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col login-box-holder">
+                                <div class="form-group mb-3">
+                                    <label for="key">Key</label>
+                                    <input type="text" class="form-control" id="key" ng-model="data.key">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="value">Value</label>
+                                    <!--  use tag textarea because content is long  -->
+                                    <!--  htmlEditor => have a Bold, Italic,(...); we need in textarea  -->
+                                    <div text-angular="text-angular" id="value" name="value"
+                                         ng-model="data.value"></div>
+                                    <!--  <textarea class="form-control" id="value" ng-model="data.value"></textarea>-->
+                                </div>
+                                <button type="submit" class="btn btn-primary" ng-click="addData()">Insert</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,205 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-t-35 {
+    margin-top: 35px;
+}
+
+.color-LuckyPoint {
+    color: #40407a;
+}
+
+.color-PalmSprings {
+    color: #218c74;
+}
+
+.color-AlamedaOchre {
+    color: #cc8e35;
+}
+
+.color-EyeOfNewt {
+    color: #b33939;
+}
+
+.color-blue {
+    color: #4687F3;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.active * {
+    font-weight: bold;
+    color: rgba(115, 115, 226, 0.94);
+}
+
+.parallax-cover {
+    background-color: #DCD4C9;
+    background-image: url("/images/parallax.jpg");
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.main-footer {
+    background-color: #282828;
+    padding: 60px 0px 20px;
+    color: #fff;
+    margin-top: auto;
+}
+
+.footer-description {
+    color: #808080;
+    font-size: 18px;
+}
+
+.footer-social {
+    color: #fff;
+    padding: 0px;
+    margin: 0 1em 0 0;
+}
+
+.footer-circle-item {
+    background-color: #423F3E;
+    color: #fff;
+    text-align: center;
+    padding-left: 1px;
+    padding-top: 10px;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    text-align: -moz-center;
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.footer-circle-item-title {
+    display: inline-block;
+    position: relative;
+    top: 2pc;
+}
+
+.footer-circle-item-title * {
+    display: inline-block;
+    font-weight: 550;
+}
+
+.footer-content-balance {
+    position: relative;
+    top: -4px;
+}
+
+.product-cat-item {
+    text-align: center;
+    text-decoration: none;
+    color: #222;
+}
+
+.product-cat-item {
+    transform: scale(1);
+    transition: all 0.25s ease-out;
+    padding-left: 10px;
+    margin: 5px auto;
+
+}
+
+.product-cat-item:hover {
+    transform: scale(1.1);
+}
+
+.product-cat-image {
+    background-color: #eee;
+    padding: 50px;
+    text-align: center;
+    border-radius: 50%;
+    width: 17pc;
+    height: 17pc;
+    margin: 5px auto;
+}
+
+.product-cat-image:hover {
+    background-color: #d8d8d8;
+    padding: 40px;
+    text-align: center;
+    border-radius: 50%;
+    width: 17pc;
+    height: 17pc;
+}
+
+.product-cat-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.color-entity-box {
+    width: 30px;
+    height: 30px;
+    border: rgba(98, 98, 98, 0.67) outset 2px;
+    display: inline-block;
+}
+
+/*product.jsp/select color*/
+.label_hover:hover {
+    cursor: pointer;
+}
+
+.color-title {
+    position: relative;
+    display: inline-block;
+    bottom: 9px;
+    left: 6px;
+}
+
+.min-height-500 {
+    min-height: 500px;
+}
+
+.table-footer {
+    background-color: #ddd;
+}
+
+.footer-developer {
+    animation: rainbow 18s infinite;
+}
+
+/*for footer-developer*/
+@keyframes rainbow {
+    0% {
+        color: #f83333;
+    }
+    14% {
+        color: orange;
+    }
+    28% {
+        color: yellow;
+    }
+    42% {
+        color: #01b201;
+    }
+    57% {
+        color: #3d3dfc;
+    }
+    71% {
+        color: #8c02f0;
+    }
+    85% {
+        color: violet;
+    }
+    100% {
+        color: #fe1111;
+    }
+}
+

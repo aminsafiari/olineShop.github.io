@@ -1,0 +1,29 @@
+<div ng-controller="colorEditCtrl">
+    <div class="container p-3 mt-5">
+        <div class="card">
+            <div class="card-header">
+                Edit Color
+                <a ng-click="changeMenu('color-list')" class="btn btn-sm btn-primary float-end">Return</a>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col login-box-holder">
+                                <div class="form-group mb-3">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" ng-model="data.name">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="value">Value</label>
+                                    <input type="color" class="form-control" id="value" ng-model="data.value">
+                                </div>
+                                <button type="submit" class="btn btn-primary" ng-click="editData()">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

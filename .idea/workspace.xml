@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd565921-38ca-4598-a237-cb566dae25b4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/amin/shop/app/config/filters/JwtRequestFilter.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/static/scripts/controllers/main/productInfoController.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/static/scripts/controllers/main/productsCategoryController.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/amin/shop/app/entities/products/ProductCategory.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productsCategory.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/amin/shop/app/entities/products/Product.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/blogInfo.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/amin/shop/app/helper/uimodels/ProductVM.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/amin/shop/app/services/product/ProductService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/about.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/products/ProductController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/web/HomeController.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="2Lgh4h8kyfXwjuisJlnEoCGl0sq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/scripts/controllers/site/search" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="show.run.dashboard.notification" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\onlineShop\src\main\resources\static\scripts\controllers\site\search" />
+      <recent name="C:\Users\USER\Desktop\onlineShop\src\main\webapp\WEB-INF\jsp" />
+      <recent name="C:\Users\USER\Desktop\mainProject2\src\main\resources\static\scripts\controllers" />
+      <recent name="C:\Users\USER\Desktop\mainProject2\src\main\resources\static\views\people\customers" />
+      <recent name="C:\Users\USER\Desktop\mainProject2\src\main\resources\static\scripts\controllers\people\customers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\mainProject2\src\main\resources\static\libs" />
+      <recent name="C:\Users\USER\Desktop\mainProject2\src\main\resources\static\libs\carousel-lazy-loading-square" />
+      <recent name="C:\Users\USER\Desktop\mainProject2\src\main\webapp\WEB-INF\jsp\partial\home" />
+      <recent name="C:\Users\USER\Desktop\mainProject2\src\main\resources\static\scripts\controllers\site\nav" />
+      <recent name="C:\Users\USER\Desktop\mainProject2\src\main\resources\static\views\products" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="amin.shop.app.helper.payment.zarinpal.models" />
+      <recent name="amin.shop.app.services.orders" />
+      <recent name="amin.shop.app.repositories.orders" />
+      <recent name="amin.shop.app.controllers.api.products" />
+      <recent name="amin.shop.app.controllers.api.orders" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="OnlineShop" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="amin.shop.app.DemoApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd565921-38ca-4598-a237-cb566dae25b4" name="Default Changelist" comment="" />
+      <created>1676298444475</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676298444475</updated>
+      <workItem from="1676298445603" duration="2921000" />
+      <workItem from="1676305298596" duration="1927000" />
+      <workItem from="1676307385031" duration="707000" />
+      <workItem from="1676364598182" duration="3383000" />
+      <workItem from="1676369090281" duration="23000" />
+      <workItem from="1676369185293" duration="59000" />
+      <workItem from="1676369484945" duration="102000" />
+      <workItem from="1676369614721" duration="115000" />
+      <workItem from="1676369741700" duration="7067000" />
+      <workItem from="1676401036085" duration="44761000" />
+      <workItem from="1676795306213" duration="16394000" />
+      <workItem from="1676897236269" duration="139422000" />
+      <workItem from="1678378413828" duration="33152000" />
+      <workItem from="1678563281692" duration="2650000" />
+      <workItem from="1678776676226" duration="10327000" />
+      <workItem from="1678954848119" duration="45258000" />
+      <workItem from="1679734479702" duration="27661000" />
+      <workItem from="1680378069290" duration="693000" />
+      <workItem from="1680770706175" duration="1173000" />
+      <workItem from="1680772383031" duration="17566000" />
+      <workItem from="1680940074574" duration="47788000" />
+      <workItem from="1681323983152" duration="42303000" />
+      <workItem from="1682685447585" duration="597000" />
+      <workItem from="1682692839548" duration="841000" />
+      <workItem from="1682756129050" duration="20810000" />
+      <workItem from="1682839691920" duration="129175000" />
+      <workItem from="1684138115659" duration="10930000" />
+      <workItem from="1684221927652" duration="65834000" />
+      <workItem from="1685263678795" duration="41838000" />
+      <workItem from="1685605660510" duration="79119000" />
+      <workItem from="1686334016171" duration="735000" />
+      <workItem from="1686478234839" duration="25651000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/products/ColorController.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/config/jwtFilterConfig.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/utils/UploadController.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/site/SliderController.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/products/ProductController.java</url>
+          <line>146</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/products/FeatureController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/orders/PaymentController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/orders/PaymentController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/services/orders/PaymentService.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/people/CustomerController.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/amin/shop/app/controllers/api/site/DashboardController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="amin.shop.app.helper.uimodels.UserVM" memberName="role" />
+        <PinnedItemInfo parentTag="java.util.AbstractMap$SimpleImmutableEntry" memberName="key" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="userVM" language="JAVA" />
+        <watch expression="oldData.sizes" />
+        <watch expression="userInfo" />
+        <watch expression="e" />
+        <watch expression="responseEntity.body" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
