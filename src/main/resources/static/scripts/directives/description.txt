@@ -1,1 +1,0 @@
-this directives use in util that for upload files and images.
