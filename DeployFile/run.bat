@@ -1,0 +1,1 @@
+java -jar OnlineShop-0.0.1-SNAPSHOT.war > out.log
