@@ -1,6 +1,14 @@
 # olineShop.github.io
-یک پروژه demo فروشگاهی دارای بخش front-end است و 0 تا 100 پروژه توسط خودم توسعه داده شده با استفاده از: زبان java jdk17.0.2 با Maven و فریمورک spring boot، معماری ORM(Hibernate) & jpa, Rest API, jsp, MVC، دیتابیس postgresql(مدیریت دیتابیس با استفاده از pgAdmin) به صورت code first پیاده سازی شده، Ws ApacheTomcat، متصل به درگاه پرداخت NextPay، پروژه dynamic دارای admin panel، سبد خرید، در IDE IntellijIdea
-
-jwt Token, Https/ssl
+<p>
+<h4>Developed Using</h4>
+Programming language : Java JDK_17.0.2<br>
+Framwork : Spring Boot 2.7.4<br>
+Architecture : MVC (Model-View-Controller)<br>
+DataBase : PostgreSQL<br>
+Dependencies : Spring Boot Dev Tools, Spring Web, Spring Data JPA, Jwt_0.9.1, PostgreSQL Driver, Gson_2.10.1, Apache Tomcat<br>
+Software Development : IntellijIdea(Maven)<br>
+Connected to "NexPay" payment gateway<br>
+Other: Rest API, ORM(Hibernate) & JPA, HTTPS/SSL, dynamic programming, JavaScript, AngularJs_1.8.2, Angular-cookies, jquery-3.5.1, BootStrap_5.2.2, Fontawesome_6.2.1, SweetAlert2, TextAngular_1.5.16, Swagger-3.0.0 
+</p>
 
 *پروژه با فرمت (war) deploy گرفته شده و همراه با فایل های مورد نیاز در پوشه DeployFile قرار دارد.
