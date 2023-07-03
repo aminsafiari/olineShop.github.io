@@ -2,7 +2,7 @@
 <p>
 <h4>Developed Using</h4>
 Programming language : Java JDK_17.0.2<br>
-Framwork : Spring Boot 2.7.4<br>
+Framework : Spring Boot 2.7.4<br>
 Architecture : MVC (Model-View-Controller)<br>
 DataBase : PostgreSQL<br>
 Dependencies : Spring Boot Dev Tools, Spring Web, Spring Data JPA, Jwt_0.9.1, PostgreSQL Driver, Gson_2.10.1, Apache Tomcat<br>
